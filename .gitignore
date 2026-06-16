@@ -1,0 +1,32 @@
+# Obsidian — per-user state (not part of the controlled QMS)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/backlink.json
+
+# Obsidian plugins — installable; re-fetch via Community plugins (not committed)
+.obsidian/plugins/
+
+# Baseline .obsidian config (app/appearance/community-plugins/core-plugins)
+# IS tracked on purpose so a fresh clone gets the right plugin list.
+
+# Plugin scratch dirs auto-created in the vault root
+copilot/
+.trash/
+
+# Audit export output — generated PDFs; never commit the snapshot back in
+qms-publish/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
+
+# Python bytecode
+__pycache__/
+*.pyc
