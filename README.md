@@ -1,10 +1,10 @@
 # Lean ISO 13485 QMS Template
 
+> ⚠️ **This is a scaffold, not a compliant QMS — and not regulatory advice.** Every document is a skeleton with `[placeholders]` you must complete for your own devices, processes and scope. Used as-is, it will not pass an audit. Read [`DISCLAIMER.md`](DISCLAIMER.md) before relying on it.
+
 A lightweight, **git-controlled** Quality Management System scaffold for medical device organisations, built in plain Markdown and [Obsidian](https://obsidian.md). Git *is* the document-control mechanism (ISO 13485:2016 §4.2.4): the `main` branch is the controlled copy and annotated tags mark approved versions.
 
 This is the open scaffold behind a QMS I built for my own company. It gives you the **machinery** — structure, conventions, dashboards, validation and controlled-copy export — as a starting point. **You supply the content.**
-
-> ⚠️ **Read [`DISCLAIMER.md`](DISCLAIMER.md) before using this.** This is a scaffold, not a finished QMS, and not regulatory or certification advice. The documents are skeletons with `[placeholders]` you must complete for your own devices, processes and scope. Shipping it as-is will not pass an audit.
 
 ## Why this exists
 
