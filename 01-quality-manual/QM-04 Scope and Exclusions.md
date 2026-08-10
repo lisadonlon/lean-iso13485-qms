@@ -29,7 +29,7 @@ related: ["QM-01"]
 
 ## 1. Scope Statement
 
-The QMS of {{ORGANISATION_NAME}} applies to: [state the devices, the activities performed (e.g. design, manufacture, distribution, installation, servicing), the site(s), and the markets/jurisdictions]. 
+The QMS of {{ORGANISATION_NAME}} applies to: {{DEVICE_TYPES}}; activities: {{QMS_ACTIVITIES}}; site(s): {{OPERATING_SITES}}; markets: {{MARKETS}}. [Refine this into full prose — state the devices, the activities performed (e.g. design, manufacture, distribution, installation, servicing), the site(s), and the markets/jurisdictions.]
 
 ## 2. Applicability of ISO 13485:2016 Requirements
 
