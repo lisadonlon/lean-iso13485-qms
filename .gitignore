@@ -30,3 +30,8 @@ desktop.ini
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Obsidian plugin build (plugin/ is source; build output is sideloaded, not tracked)
+plugin/node_modules/
+plugin/main.js
+plugin/src/generated/

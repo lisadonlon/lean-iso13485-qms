@@ -61,6 +61,8 @@ A lightweight ISO 13485:2016 Quality Management System, authored in Obsidian, wh
 | `_templates/` | Templater templates | Yes, with care |
 | `_archive/` | Obsolete docs | Never write |
 | `scripts/` | Python tooling | Yes |
+| `plugin/` | Micro QMS Obsidian plugin (TypeScript) | Yes — software, not QMS content |
+| `skills/` | Claude skills (qms-interview) | Yes, with care |
 | `.obsidian/` | Obsidian config | Baseline config is tracked; per-user state is gitignored |
 
 ## Doc ID prefixes

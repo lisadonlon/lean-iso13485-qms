@@ -40,6 +40,16 @@ In **Obsidian Git** settings, set all auto-commit / auto-push / auto-pull interv
 python3 scripts/init_qms.py --org "Your Company Ltd" --quality-manager "Your Name"
 ```
 
+### Alternative: the Micro QMS plugin (no git or terminal required)
+
+If you prefer a guided setup inside Obsidian — or your team works from a shared
+drive (Dropbox, Google Drive, SharePoint) rather than git — build and sideload
+the Micro QMS plugin in `plugin/` (see `plugin/README.md`). Its setup wizard
+asks about your company and scope, scaffolds the vault, fills the tokens, and
+manages draft/review/approval status without the terminal ceremony below. The
+companion Claude skill in `skills/qms-interview/` goes further and helps you
+draft the document content itself.
+
 ### Load the shell aliases (optional)
 
 ```bash

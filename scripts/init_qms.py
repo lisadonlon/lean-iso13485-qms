@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Personalise the QMS template for your organisation.
 
-Sets qms.config.json (organisation, quality manager, standard) and replaces the
-{{ORGANISATION_NAME}} placeholder throughout the Markdown documents. Run this
-once after cloning from the template.
+Sets qms.config.json (organisation, quality manager, standard) and replaces
+{{TOKEN}} placeholders throughout the Markdown documents. Tokens whose value
+is not present in the config are left in place, so the script is safe to
+re-run as the config grows (e.g. after the Micro QMS plugin setup wizard or
+the qms-interview skill has added company and scope details).
 
 Stdlib only.
 
@@ -20,9 +22,51 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-PLACEHOLDER = "{{ORGANISATION_NAME}}"
 DEFAULT_ORG = "Your Organisation Ltd"
-SKIP_TOP = {".git", "_archive", ".obsidian", "scripts"}
+SKIP_TOP = {".git", "_archive", ".obsidian", "scripts", "plugin", "skills"}
+
+ROLE_LABELS = {
+    "legal_manufacturer": "legal manufacturer",
+    "own_brand_labeller": "own-brand labeller",
+    "contract_manufacturer": "contract manufacturer",
+    "distributor": "distributor",
+    "importer": "importer",
+}
+
+
+def build_token_map(cfg: dict) -> dict:
+    """Map {{TOKEN}} names to values from the config.
+
+    Tokens with no usable value are omitted (left untouched in documents).
+    """
+    company = cfg.get("company") or {}
+    tokens: dict = {}
+
+    def put(name: str, value) -> None:
+        if isinstance(value, str):
+            value = value.strip()
+        if value:
+            tokens[name] = value
+
+    put("ORGANISATION_NAME", cfg.get("organisation")
+        if cfg.get("organisation") not in (DEFAULT_ORG, None) else "")
+    put("QUALITY_MANAGER", cfg.get("quality_manager"))
+    put("COMPANY_REGISTRATION", company.get("registration_number"))
+    put("REGISTERED_OFFICE", company.get("registered_office"))
+    put("REGULATORY_ROLE", ROLE_LABELS.get(company.get("regulatory_role", ""),
+                                           company.get("regulatory_role")))
+    sites = [s for s in (company.get("operating_sites") or []) if isinstance(s, dict)]
+    site_parts = []
+    for s in sites:
+        addr = (s.get("address") or "").strip()
+        acts = (s.get("activities") or "").strip()
+        if addr:
+            site_parts.append(f"{addr} ({acts})" if acts else addr)
+    put("OPERATING_SITES", "; ".join(site_parts))
+    put("DEVICE_TYPES", ", ".join(company.get("device_types") or []))
+    put("MARKETS", ", ".join(company.get("markets") or []))
+    put("QMS_ACTIVITIES", ", ".join(company.get("activities") or []))
+    return tokens
 
 
 def ask(prompt: str, default: str = "") -> str:
@@ -64,7 +108,9 @@ def main() -> int:
         qm = ask("Quality manager name (optional)", cfg.get("quality_manager", "") or "")
     standard = args.standard or cfg.get("standard") or "ISO 13485:2016"
 
-    # Find markdown files containing the placeholder
+    tokens = build_token_map({**cfg, "organisation": org, "quality_manager": qm})
+
+    # Find markdown files containing any resolvable token
     changed = []
     for md in sorted(ROOT.rglob("*.md")):
         rel = md.relative_to(ROOT)
@@ -74,15 +120,19 @@ def main() -> int:
             text = md.read_text(encoding="utf-8")
         except (OSError, UnicodeDecodeError):
             continue
-        if PLACEHOLDER in text:
+        new_text = text
+        for name, value in tokens.items():
+            new_text = new_text.replace("{{" + name + "}}", value)
+        if new_text != text:
             changed.append(rel)
             if not args.dry_run:
-                md.write_text(text.replace(PLACEHOLDER, org), encoding="utf-8")
+                md.write_text(new_text, encoding="utf-8")
 
     print(f"Organisation:    {org}")
     print(f"Quality manager: {qm or '(blank)'}")
     print(f"Standard:        {standard}")
-    print(f"Files with {PLACEHOLDER}: {len(changed)}")
+    print(f"Resolvable tokens: {', '.join(sorted(tokens)) or '(none)'}")
+    print(f"Files with resolvable tokens: {len(changed)}")
     for rel in changed:
         print(f"  {'would update' if args.dry_run else 'updated'}: {rel}")
 
