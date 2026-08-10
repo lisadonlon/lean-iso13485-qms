@@ -1,0 +1,21 @@
+{
+  "name": "micro-qms",
+  "version": "0.1.0",
+  "description": "Micro QMS Obsidian plugin - lean ISO 13485:2016 QMS scaffolding and document control",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "harvest": "node scripts/harvest-templates.mjs",
+    "build": "npm run harvest && node esbuild.config.mjs production",
+    "dev": "npm run harvest && node esbuild.config.mjs",
+    "typecheck": "npm run harvest && tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "builtin-modules": "^4.0.0",
+    "esbuild": "^0.24.0",
+    "obsidian": "^1.7.2",
+    "tslib": "^2.8.0",
+    "typescript": "^5.6.0"
+  }
+}

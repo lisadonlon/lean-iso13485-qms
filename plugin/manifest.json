@@ -1,0 +1,10 @@
+{
+  "id": "micro-qms",
+  "name": "Micro QMS",
+  "version": "0.1.0",
+  "minAppVersion": "1.4.0",
+  "description": "Build and run a lean ISO 13485:2016 quality management system in your vault: guided setup wizard, document scaffolding, and document lifecycle control that works on a shared drive or with git.",
+  "author": "Donlon Life Science Consulting",
+  "authorUrl": "https://github.com/lisadonlon/lean-iso13485-qms",
+  "isDesktopOnly": true
+}

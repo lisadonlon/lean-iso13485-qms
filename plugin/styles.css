@@ -1,0 +1,69 @@
+/* Micro QMS plugin styles */
+
+.microqms-wizard-step-title {
+  margin-bottom: 0.25em;
+}
+
+.microqms-wizard-step-count {
+  color: var(--text-muted);
+  font-size: var(--font-ui-small);
+  margin-bottom: 1em;
+}
+
+.microqms-wizard-question {
+  margin-top: 0.75em;
+}
+
+.microqms-wizard-justification textarea {
+  width: 100%;
+  min-height: 60px;
+}
+
+.microqms-wizard-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
+
+.microqms-wizard-nav .mod-cta {
+  margin-left: auto;
+}
+
+.microqms-preview {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  padding: 0.5em 0.75em;
+  font-size: var(--font-ui-small);
+}
+
+.microqms-preview ul {
+  margin: 0.25em 0;
+  padding-left: 1.25em;
+}
+
+.microqms-healthcheck-result {
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-small);
+  white-space: pre-wrap;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.microqms-check-pass {
+  color: var(--color-green);
+}
+
+.microqms-check-warn {
+  color: var(--color-orange);
+}
+
+.microqms-check-fail {
+  color: var(--color-red);
+}
+
+.microqms-ceremony pre {
+  user-select: text;
+  white-space: pre-wrap;
+}
