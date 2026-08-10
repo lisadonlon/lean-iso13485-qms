@@ -25,7 +25,7 @@ related: ["QM-02", "QM-03", "QM-04"]
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
-> **How to use this skeleton.** This is the keystone document required by ISO 13485:2016 §4.2.2. Replace every `[bracketed]` prompt and `{{ORGANISATION_NAME}}` token with your own content. Keep it specific to your organisation — a generic manual is an audit finding waiting to happen. The mandatory parts a manual must contain are the **scope** (with justified exclusions), the **documented procedures** (or references to them), and a **description of the interaction between the QMS processes**; those sections are flagged below.
+> **How to use this skeleton.** This is the keystone document required by ISO 13485:2016 §4.2.2. Replace every `[bracketed]` prompt and `{{TOKEN}}` placeholder with your own content — tokens are filled automatically by `scripts/init_qms.py` or the Micro QMS plugin setup wizard. Keep it specific to your organisation — a generic manual is an audit finding waiting to happen. The mandatory parts a manual must contain are the **scope** (with justified exclusions), the **documented procedures** (or references to them), and a **description of the interaction between the QMS processes**; those sections are flagged below.
 
 ## 1. Introduction and Purpose
 
@@ -36,10 +36,10 @@ This manual describes the Quality Management System (QMS) of {{ORGANISATION_NAME
 | Item | Detail |
 |------|--------|
 | Legal entity | {{ORGANISATION_NAME}} |
-| Company registration | [number] |
-| Registered office | [address] |
-| Operating site(s) | [address(es) and the activities performed at each] |
-| Regulatory role | [e.g. legal manufacturer / own-brand labeller / contract manufacturer] |
+| Company registration | {{COMPANY_REGISTRATION}} |
+| Registered office | {{REGISTERED_OFFICE}} |
+| Operating site(s) | {{OPERATING_SITES}} |
+| Regulatory role | {{REGULATORY_ROLE}} |
 
 [Describe what the organisation does, the devices it places on the market, the markets/jurisdictions it serves, and a brief history relevant to the QMS scope.]
 
@@ -86,7 +86,7 @@ Document control is operated through Git per [[SOP-01 Document Control]]: the `m
 
 ## 8. Management Responsibility
 
-[Identify top management, the appointed management representative (§5.5.2), and the responsibilities and authorities for quality (§5.5.1).]
+The appointed management representative (§5.5.2) is {{QUALITY_MANAGER}}. [Identify top management and the responsibilities and authorities for quality (§5.5.1).]
 
 ## 9. Revision History
 
