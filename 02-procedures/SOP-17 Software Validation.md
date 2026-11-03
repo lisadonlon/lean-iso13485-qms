@@ -25,7 +25,7 @@ related: ["SOP-02", "SOP-09", "SOP-14"]
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
-> **Scope note.** ISO 13485:2016 requires software used in the QMS (§4.1.6), and in production and service provision (§7.5.6), to be validated for its intended use before first use and after changes, with an approach proportionate to the risk of using it [verify: §4.1.6 and §7.5.6 against the official text]. The three validation approaches in section 6.2 are one simple, risk-based way to do that. Adapt the criteria to your organisation. Software that is part of, or is itself, a medical device is outside this procedure: it falls under design and development ([[SOP-07 Design and Development Control]]) and IEC 62304.
+> **Scope note.** ISO 13485:2016 requires software used in the QMS (§4.1.6), and in production and service provision (§7.5.6), to be validated for its intended use before first use and after changes, with an approach proportionate to the risk of using it. The three validation approaches in section 6.2 are one simple, risk-based way to do that. Adapt the criteria to your organisation. Software that is part of, or is itself, a medical device is outside this procedure: it falls under design and development ([[SOP-07 Design and Development Control]]) and IEC 62304.
 
 ## 1. Purpose
 
