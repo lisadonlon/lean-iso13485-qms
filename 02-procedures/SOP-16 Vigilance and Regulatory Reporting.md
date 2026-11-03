@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: []
+related: ["SOP-06"]
 ---
 
 # Vigilance and Regulatory Reporting
@@ -24,6 +24,8 @@ related: []
 **Document ID:** SOP-16
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
+
+> **Risk link.** Incidents and field safety corrective actions feed into the risk management file ([[SOP-06 Risk Management]]).
 
 > **Scope note.** Align reporting obligations and timelines to your market(s): e.g. EU MDR Articles 87-92, US FDA MDR (21 CFR 803). Personal-data breach reporting is separate (GDPR Art 33/34).
 

@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: []
+related: ["SOP-06"]
 ---
 
 # Design and Development Control
@@ -24,6 +24,8 @@ related: []
 **Document ID:** SOP-07
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
+
+> **Risk link.** Design inputs, outputs and changes feed into the risk management file ([[SOP-06 Risk Management]]).
 
 > **Scope note.** Applicable if you design devices. Mark 7.3 N/A in QM-04 (with justification) ONLY if you do not perform design and development. If your device contains software, also reference IEC 62304.
 

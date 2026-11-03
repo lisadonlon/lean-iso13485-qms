@@ -3,7 +3,7 @@ doc_id: SOP-06
 title: Risk Management
 doc_type: procedure
 standard: ISO 13485:2016
-clauses: ["7.1"]
+clauses: ["4.1.2", "7.1"]
 revision: "1.0"
 status: draft
 effective_date:
@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: []
+related: ["FRM-02", "SOP-07", "SOP-14", "SOP-15", "SOP-16"]
 ---
 
 # Risk Management
@@ -25,7 +25,7 @@ related: []
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
-> **Scope note.** Implement against ISO 14971. Reference your risk management plan and risk management file; do not duplicate ISO 14971 text here.
+> **Scope note.** Two kinds of risk, kept apart. **Device risk** (§7.1, ISO 14971): one plan ([[FRM-02 Risk Management Plan]]) and risk management file per device; do not duplicate ISO 14971 text here. **QMS process risk** (§4.1.2): recorded in QMS risk assessment records (RSK-YYYY-NN).
 
 ## 1. Purpose
 
@@ -54,9 +54,13 @@ Terms used in this procedure are defined in [[REF-02 Glossary]], and role names 
 
 ## 6. Procedure
 
-### 6.1 [Step or sub-process]
+### 6.1 Device risk
 
 [Describe the process step by step. Keep it to what is actually done.]
+
+### 6.2 QMS process risk
+
+[How often QMS process risks are assessed, by whom, and how results are used.]
 
 ## 7. Records
 

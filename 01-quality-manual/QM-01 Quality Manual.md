@@ -61,7 +61,7 @@ The QMS is operated as a set of interacting processes. [Describe each process: i
 | Software validation | [[SOP-17 Software Validation]] | 4.1.6, 7.5.6 |
 | Management responsibility and review | [[SOP-03 Management Review]] | 5 |
 | Resource and competence management | [[SOP-04 Human Resources and Competence]] | 6 |
-| Risk management | [[SOP-06 Risk Management]] | 7.1 |
+| Risk management | [[SOP-06 Risk Management]] | 4.1.2, 7.1 |
 | Design and development | [[SOP-07 Design and Development Control]] | 7.3 |
 | Purchasing and supplier control | [[SOP-08 Purchasing and Supplier Control]] | 7.4 |
 | Production and service provision | [[SOP-09 Production and Service Provision]] | 7.5 |

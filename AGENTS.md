@@ -80,6 +80,7 @@ A lightweight ISO 13485:2016 Quality Management System, authored in Obsidian, wh
 | DIST-YYYY-NN | `05-records/distribution/` | Distribution records (script-written) |
 | CAPA-YYYY-NN | `05-records/capa/` | CAPA records |
 | AUD-YYYY-NN | `05-records/audits/` | Audit records |
+| RSK-YYYY-NN | `05-records/risk/` | QMS process risk assessments (from template, per SOP-06) |
 | SVR-YYYY-NN | `05-records/software-validation/` | Software validation records (from template, per SOP-17) |
 
 NN is a zero-padded two-digit counter. The validator enforces NN, not NNN.
