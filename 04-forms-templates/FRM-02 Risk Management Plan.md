@@ -25,7 +25,7 @@ related: ["SOP-06"]
 **Revision:** 1.0
 **Parent Procedure:** [[SOP-06 Risk Management]]
 
-> One plan per device or device family, kept in its risk management file. Check the required content against ISO 14971 [verify: ISO 14971:2019 §4.4].
+> One plan per device or device family, kept in its risk management file. Check the required content against ISO 14971.
 
 | Section | Content |
 |---------|---------|
