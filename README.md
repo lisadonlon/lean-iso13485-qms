@@ -21,7 +21,7 @@ Most QMS tooling is heavyweight, proprietary, and hides your own documents behin
 |------|----------|
 | `00-dashboard/` | Dataview dashboards (register, overdue reviews, status, CAPA, audits) |
 | `01-quality-manual/` | QM-01–04 skeletons (manual, policy, objectives, scope & exclusions) |
-| `02-procedures/` | 17 SOP skeletons for the core of a manufacturer QMS — a starting set, not a complete one; check REF-01 against your scope |
+| `02-procedures/` | 18 SOP skeletons for the core of a manufacturer QMS — a starting set, not a complete one; check REF-01 against your scope |
 | `03-work-instructions/` | (empty — add your device-specific WIs) |
 | `04-forms-templates/` | FRM-01 controlled-document distribution log |
 | `05-records/` | Record folders (audits, CAPA, reviews, training, complaints, changes, validation, distribution); records use their own, shorter frontmatter |

@@ -65,7 +65,7 @@ The QMS is operated as a set of interacting processes. [Describe each process: i
 | Design and development | [[SOP-07 Design and Development Control]] | 7.3 |
 | Purchasing and supplier control | [[SOP-08 Purchasing and Supplier Control]] | 7.4 |
 | Production and service provision | [[SOP-09 Production and Service Provision]] | 7.5 |
-| Measurement, analysis and improvement | [[SOP-12 Internal Audit]], [[SOP-14 Corrective and Preventive Action]] | 8 |
+| Measurement, analysis and improvement | [[SOP-12 Internal Audit]], [[SOP-14 Corrective and Preventive Action]], [[SOP-18 Analysis of Data]] | 8 |
 | Vigilance and regulatory reporting | [[SOP-16 Vigilance and Regulatory Reporting]] | 8.2.3 |
 
 **Process interaction diagram:** [Insert a process-interaction (turtle) diagram here — see `07-process-maps/`. Embed it as an image, e.g. `![Process interaction](../07-process-maps/PM-01-process-interaction.svg)`.]
