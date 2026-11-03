@@ -28,9 +28,9 @@ related: ["QM-01"]
 > **Skeleton — read before completing.** ISO 13485:2016 §1.2 separates two things, and both need a recorded justification:
 >
 > - **Exclusion.** Design and development controls (7.3) can be excluded, but only where the regulations that apply to your devices permit it. Whether they do depends on your market and device class, so check before relying on it.
-> - **Not applicable.** A requirement in Clause 6, 7 or 8 that does not apply because of the activities you perform or the nature of your devices is recorded as not applicable. Requirements outside Clauses 6–8 cannot be marked not applicable.
+> - **Not applicable.** A requirement in Clause 6, 7 or 8 that does not apply because of the activities you perform or the nature of your devices is recorded as not applicable.
 >
-> This is a summary for navigation, not the standard's wording [verify: ISO 13485:2016 §1.2 against the official text]. **Do not mark a clause not applicable just because it is inconvenient.** If you design devices, 7.3 applies. If your device is or contains software, expect IEC 62304 to be part of your regulatory context. The default below assumes a typical device manufacturer — edit the Applicable/Justification column to match what you actually do.
+> Justifications must match what you actually do; your certification body will check them. This is a summary for navigation, not the standard's wording. **Do not mark a clause not applicable just because it is inconvenient.** If you design devices, 7.3 applies. If your device is or contains software, expect IEC 62304 to be part of your regulatory context. The default below assumes a typical device manufacturer — edit the Applicable/Justification column to match what you actually do.
 
 ## 1. Scope Statement
 
