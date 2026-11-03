@@ -25,7 +25,7 @@ related: []
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
-> **Scope note.** Records are not controlled documents. A document says what is done and is revised under [[SOP-01 Document Control]]; a record is evidence that it was done, made once and kept. Records therefore carry no revision, effective date or review date (see the record schema in `AGENTS.md`). A wrong entry is corrected by a dated, attributed correction that leaves the original visible, never by overwriting it. Set retention periods here: §4.2.5 links the minimum to the lifetime of the device as you define it, or to applicable regulatory requirements, with a floor of two years from release [verify: ISO 13485:2016 §4.2.5 against the official text].
+> **Scope note.** Records are not controlled documents. A document says what is done and is revised under [[SOP-01 Document Control]]; a record is evidence that it was done, made once and kept. Records therefore carry no revision, effective date or review date (see the record schema in `AGENTS.md`). A wrong entry is corrected by a dated, attributed correction that leaves the original visible, never by overwriting it. Set retention periods here: §4.2.5 links the minimum to the lifetime of the device as you define it, or to applicable regulatory requirements, with a floor of two years from release. Define device lifetime with a rationale, keep obsolete documents at least as long as the records that depend on them, and note that EU MDR counts retention from the last device placed on the market.
 
 ## 1. Purpose
 
