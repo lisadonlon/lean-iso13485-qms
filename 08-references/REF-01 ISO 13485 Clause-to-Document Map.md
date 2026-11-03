@@ -24,7 +24,7 @@ related: ["QM-01", "QM-04"]
 **Document ID:** REF-01
 **Revision:** 1.0
 
-This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it to demonstrate coverage to an auditor and to find the controlling document quickly. Update it as you add or rename documents. Where a clause is recorded as not applicable, the justification lives in [[QM-04 Scope and Exclusions]].
+This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it to demonstrate coverage to an auditor and to find the controlling document quickly. Update it as you add or rename documents. Where a clause is recorded as not applicable, the justification lives in [[QM-04 Scope and Exclusions]]. The mapping is a suggestion: change it to show where you actually address each clause. Rows marked [Add document] have no skeleton in this template. Clause titles are shortened for navigation; check them against the official text.
 
 | Clause | Title | Controlling document(s) |
 |--------|-------|--------------------------|
@@ -37,6 +37,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 5.1–5.4 | Management commitment / policy / objectives | [[QM-02 Quality Policy]], [[QM-03 Quality Objectives]] |
 | 5.5 | Responsibility, authority, communication | [[QM-01 Quality Manual]] |
 | 5.6 | Management review | [[SOP-03 Management Review]] |
+| 6.1 | Provision of resources | [[QM-01 Quality Manual]], [[SOP-03 Management Review]] |
 | 6.2 | Human resources / competence | [[SOP-04 Human Resources and Competence]] |
 | 6.3–6.4 | Infrastructure / work environment | [[SOP-05 Infrastructure and Work Environment]] |
 | 7.1 | Planning of realization / risk management | [[SOP-06 Risk Management]] |
@@ -45,12 +46,20 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 7.4 | Purchasing | [[SOP-08 Purchasing and Supplier Control]] |
 | 7.5.1–7.5.5 | Production and service provision | [[SOP-09 Production and Service Provision]] |
 | 7.5.6 | Validation of processes (including software) | [[SOP-09 Production and Service Provision]], [[SOP-17 Software Validation]] |
+| 7.5.7 | Validation of sterilisation and sterile barrier systems | [[SOP-09 Production and Service Provision]] (if applicable) |
 | 7.5.8–7.5.9 | Identification and traceability | [[SOP-10 Identification and Traceability]] |
+| 7.5.10 | Customer property | [[SOP-09 Production and Service Provision]] (if applicable) |
+| 7.5.11 | Preservation of product | [[SOP-09 Production and Service Provision]] |
 | 7.6 | Monitoring and measuring equipment | [[SOP-11 Control of Monitoring and Measuring Equipment]] |
+| 8.1 | Measurement, analysis and improvement: general | [[QM-01 Quality Manual]] |
 | 8.2.1–8.2.2 | Feedback / complaint handling | [[SOP-15 Complaint Handling and Feedback]] |
 | 8.2.3 | Reporting to regulatory authorities | [[SOP-16 Vigilance and Regulatory Reporting]] |
 | 8.2.4 | Internal audit | [[SOP-12 Internal Audit]] |
+| 8.2.5 | Monitoring and measurement of processes | [[QM-03 Quality Objectives]] |
+| 8.2.6 | Monitoring and measurement of product | [[SOP-09 Production and Service Provision]] |
 | 8.3 | Control of nonconforming product | [[SOP-13 Control of Nonconforming Product]] |
+| 8.4 | Analysis of data | [Add document] |
+| 8.5.1 | Improvement: general | [[SOP-03 Management Review]], [[SOP-14 Corrective and Preventive Action]] |
 | 8.5.2–8.5.3 | Corrective / preventive action | [[SOP-14 Corrective and Preventive Action]] |
 
 ## Revision History
