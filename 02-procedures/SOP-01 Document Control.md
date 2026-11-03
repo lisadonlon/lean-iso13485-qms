@@ -25,6 +25,8 @@ related: []
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
+> **Scope note.** If you use git for document control, state here how approval is evidenced (annotated or signed tags), who may approve, who may push to `main`, and how that access is controlled. A plain annotated tag shows what was approved and when, but not reliably who; see `HOWTO.md` §3.1.
+
 ## 1. Purpose
 
 [State the purpose of this procedure — i.e. how controlled documents are created, reviewed, approved, distributed, revised and withdrawn.]

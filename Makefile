@@ -10,6 +10,7 @@
         approve push draft approved dirty-check
 
 # Override with `make approve APPROVER="Someone Else"` if delegated.
+# Add SIGN=1 to sign the approval tag (git tag -s); see HOWTO.md section 3.1.
 APPROVER ?= Quality Manager
 TODAY    := $(shell date +%Y-%m-%d)
 
@@ -133,9 +134,10 @@ approve:
 	@echo "About to tag HEAD as: $(DOC)-v$(REV)"
 	@echo "Approver: $(APPROVER)"
 	@echo "Date:     $(TODAY)"
+	@echo "Signed:   $(if $(SIGN),yes,no)"
 	@echo "Commit being tagged:"
 	@git log -1 --oneline
 	@echo ""
-	git tag -a $(DOC)-v$(REV) -m "$(DOC) Rev $(REV) approved by $(APPROVER) on $(TODAY)"
+	git tag $(if $(SIGN),-s,-a) $(DOC)-v$(REV) -m "$(DOC) Rev $(REV) approved by $(APPROVER) on $(TODAY)"
 	@echo ""
 	@echo "Tag created. Push with: make push"

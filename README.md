@@ -10,7 +10,7 @@ This is the open scaffold behind a QMS I built for my own company. It gives you 
 
 Most QMS tooling is heavyweight, proprietary, and hides your own documents behind a vendor. This approach keeps everything in **plain text you own**:
 
-- **Diffable & auditable** — every change is a git commit; approvals are annotated tags. The change history *is* the §4.2.4 evidence.
+- **Diffable & auditable** — every change is a git commit; approvals are annotated tags, optionally signed. The change history is your document-control evidence; see [`HOWTO.md`](HOWTO.md) §3.1 for what a tag does and does not prove.
 - **Lightweight** — Markdown + a couple of stdlib Python scripts. No database, no lock-in.
 - **Live dashboards** — Obsidian Dataview gives you a document register, overdue-review tracker, CAPA log and audit schedule with no manual upkeep.
 - **Controlled-copy export** — one command produces footer-stamped, version-tagged PDFs plus a distribution record for sharing with an auditor or customer.

@@ -851,11 +851,11 @@ def pq_09_git_tag_exists(run: ValidationRun) -> None:
     """PQ-09: Approved documents have a matching annotated git tag.
 
     For every document with status: approved, verifies that an annotated git
-    tag exists named {doc_id}-v{revision}. Annotated tags are required per
-    SOP-01 §6.3 — they carry tagger, date, and message metadata that constitute
-    the §4.2.4 evidence of controlled distribution and traceability. Lightweight
+    tag exists named {doc_id}-v{revision}. Annotated or signed tags are
+    required: they record the approved commit, a date and a message. Lightweight
     tags (which lack this metadata) are flagged as a failure even if a tag of
-    the correct name exists.
+    the correct name exists. The tagger name is not proof of identity unless the
+    tag is signed; see HOWTO.md section 3.1.
     """
     docs = get_controlled_docs()
     issues: list[str] = []

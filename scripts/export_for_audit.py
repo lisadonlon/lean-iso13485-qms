@@ -27,7 +27,7 @@ What it does:
 
 Dependencies (install once):
     brew install pandoc
-    pip3 install weasyprint --break-system-packages
+    brew install weasyprint      # or: pipx install weasyprint
 
 Usage:
     python scripts/export_for_audit.py                    # Default: ../qms-publish/
@@ -129,7 +129,7 @@ def check_dependency(cmd: str, install_hint: str) -> None:
 
 def check_dependencies() -> None:
     check_dependency("pandoc", "brew install pandoc")
-    check_dependency("weasyprint", "pip3 install weasyprint --break-system-packages")
+    check_dependency("weasyprint", "brew install weasyprint (macOS) or pipx install weasyprint")
 
 
 # ---------------------------------------------------------------------------
