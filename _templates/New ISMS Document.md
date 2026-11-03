@@ -42,9 +42,7 @@ related: []
 
 ## 4. Definitions
 
-| Term | Definition |
-|------|-----------|
-| | |
+Terms used in this document are defined in [[REF-02 Glossary]], and role names in section 5 are taken from REF-02 section 1. Add any new term or role to REF-02; do not define it here.
 
 ## 5. Policy / Content
 

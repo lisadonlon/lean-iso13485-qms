@@ -25,6 +25,8 @@ related: []
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
+> **Scope note.** Records are not controlled documents. A document says what is done and is revised under [[SOP-01 Document Control]]; a record is evidence that it was done, made once and kept. Records therefore carry no revision, effective date or review date (see the record schema in `AGENTS.md`). A wrong entry is corrected by a dated, attributed correction that leaves the original visible, never by overwriting it. Set retention periods here: §4.2.5 links the minimum to the lifetime of the device as you define it, or to applicable regulatory requirements, with a floor of two years from release [verify: ISO 13485:2016 §4.2.5 against the official text].
+
 ## 1. Purpose
 
 [State the purpose of this procedure — i.e. how records are identified, stored, protected, retained and disposed of.]
@@ -41,9 +43,7 @@ related: []
 
 ## 4. Definitions
 
-| Term | Definition |
-|------|-----------|
-|  |  |
+Terms used in this procedure are defined in [[REF-02 Glossary]], and role names in section 5 are taken from REF-02 section 1. Add any new term or role to REF-02; do not define it here.
 
 ## 5. Responsibilities
 

@@ -4,19 +4,13 @@ title: <% tp.system.prompt("Audit title (e.g., Internal Audit - Document Control
 doc_type: record
 standard: ISO 13485:2016
 clauses: ["8.2.4"]
-revision: "1.0"
-status: draft
-effective_date: <% tp.date.now("YYYY-MM-DD") %>
-review_due:
-review_interval: 12
+record_date: <% tp.date.now("YYYY-MM-DD") %>
 author: 
-reviewer:
+tags: [qms, audit, record]
+related: []
+status: draft
 approver: 
 approved_date:
-change_summary: "Audit record created"
-tags: [qms, audit, record]
-supersedes:
-related: []
 audit_type:
 audit_date:
 audit_scope:
@@ -73,8 +67,10 @@ audit_status: planned
 **Auditor:** _________________________ **Date:** ___/___/______
 **Auditee:** _________________________ **Date:** ___/___/______
 
-## 6. Revision History
+## 6. Corrections
 
-| Rev | Date | Author | Change Summary |
-|-----|------|--------|---------------|
-| 1.0 | <% tp.date.now("DD/MM/YYYY") %> |  | Audit record created |
+> Records are made once and are not revised. If an entry above is wrong, leave it as it is and add a dated, attributed correction here.
+
+| Date | By | Correction |
+|------|----|-----------|
+| | | |

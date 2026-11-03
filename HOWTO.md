@@ -62,6 +62,7 @@ Remember while editing:
 - Frontmatter dates are `YYYY-MM-DD`; body-text dates are `DD/MM/YYYY`.
 - Write procedures as statements of what is done — avoid "shall" (use "must", or just state the fact). "Shall" is the standard's verb, not yours.
 - Don't leave `[placeholder]` markers in a document you're about to approve.
+- Records are not documents. Create them from the templates in `_templates/`; they have no revision or review date and are not approved with tags. To fix a wrong entry in a record, add a dated correction in its Corrections section rather than overwriting it.
 
 ---
 
@@ -91,7 +92,7 @@ The full §4.2.4 ceremony, for releasing a document at Rev 1.0. Allow ~10 minute
    ```
    This creates an annotated tag `SOP-XX-v1.0` carrying approver, date and message.
 7. **Push** commit + tag: `make push`.
-8. **Run validation** to produce the VAL record: `make validate` (expect 24/24, allowing for IQ-04 if plugins aren't installed on this machine).
+8. **Run validation** to produce the VAL record: `make validate` (expect 26/26, allowing for IQ-04 if plugins aren't installed on this machine).
 9. **Commit the VAL record:**
    ```bash
    git add 05-records/software-validation/
@@ -154,6 +155,8 @@ Don't give external parties git access. Generate a PDF snapshot instead.
 | PQ-06 | A date isn't `YYYY-MM-DD` | Fix the frontmatter date |
 | PQ-07 | Working tree has uncommitted changes | Commit or stash, re-run |
 | PQ-09 | An approved doc has no matching annotated tag | `make approve DOC=... REV=...` |
+| OQ-10 | A record template has document fields, or lacks record fields | Fix the template's frontmatter (see `AGENTS.md`, records schema) |
+| PQ-10 | A record has document-only fields (revision, effective date, ...) or is missing record fields | Correct its frontmatter to the records schema in `AGENTS.md` |
 
 Real, persistent failures should be raised as CAPAs — that's the audit-quality way to track them.
 

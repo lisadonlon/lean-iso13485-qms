@@ -4,19 +4,13 @@ title: <% tp.system.prompt("CAPA title (brief description of issue)") %>
 doc_type: record
 standard: ISO 13485:2016
 clauses: ["8.5.2", "8.5.3"]
-revision: "1.0"
-status: draft
-effective_date: <% tp.date.now("YYYY-MM-DD") %>
-review_due:
-review_interval: 12
+record_date: <% tp.date.now("YYYY-MM-DD") %>
 author: 
-reviewer:
+tags: [qms, capa, record]
+related: []
+status: draft
 approver: 
 approved_date:
-change_summary: "CAPA initiated"
-tags: [qms, capa, record]
-supersedes:
-related: []
 capa_type:
 capa_source:
 capa_status: open
@@ -66,8 +60,10 @@ closure_date:
 **Closed by:** _________________________ **Date:** ___/___/______
 **Approved by:** _________________________ **Date:** ___/___/______
 
-## 7. Revision History
+## 7. Corrections
 
-| Rev | Date | Author | Change Summary |
-|-----|------|--------|---------------|
-| 1.0 | <% tp.date.now("DD/MM/YYYY") %> |  | CAPA initiated |
+> Records are made once and are not revised. If an entry above is wrong, leave it as it is and add a dated, attributed correction here.
+
+| Date | By | Correction |
+|------|----|-----------|
+| | | |
