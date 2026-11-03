@@ -50,7 +50,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 7.5.7 | Validation of sterilisation and sterile barrier systems | [[SOP-09 Production and Service Provision]] (if applicable) |
 | 7.5.8–7.5.9 | Identification and traceability | [[SOP-10 Identification and Traceability]] |
 | 7.5.10 | Customer property | [[SOP-09 Production and Service Provision]] (if applicable) |
-| 7.5.11 | Preservation of product | [[SOP-09 Production and Service Provision]] |
+| 7.5.11 | Preservation of product | [[SOP-09 Production and Service Provision]] (if applicable) |
 | 7.6 | Monitoring and measuring equipment | [[SOP-11 Control of Monitoring and Measuring Equipment]] |
 | 8.1 | Measurement, analysis and improvement: general | [[QM-01 Quality Manual]] |
 | 8.2.1–8.2.2 | Feedback / complaint handling | [[SOP-15 Complaint Handling and Feedback]], [[SOP-06 Risk Management]] |
@@ -59,8 +59,8 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 8.2.5 | Monitoring and measurement of processes | [[QM-03 Quality Objectives]] |
 | 8.2.6 | Monitoring and measurement of product | [[SOP-09 Production and Service Provision]] |
 | 8.3 | Control of nonconforming product | [[SOP-13 Control of Nonconforming Product]] |
-| 8.4 | Analysis of data | [Add document] |
-| 8.5.1 | Improvement: general | [[SOP-03 Management Review]], [[SOP-14 Corrective and Preventive Action]] |
+| 8.4 | Analysis of data | [[SOP-18 Analysis of Data]] |
+| 8.5.1 | Improvement: general | [[SOP-03 Management Review]], [[SOP-14 Corrective and Preventive Action]], [[SOP-18 Analysis of Data]] |
 | 8.5.2–8.5.3 | Corrective / preventive action | [[SOP-14 Corrective and Preventive Action]] |
 
 ## Revision History
