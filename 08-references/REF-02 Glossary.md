@@ -94,7 +94,7 @@ related: ["QM-01", "SOP-01", "SOP-02", "SOP-17"]
 | Sterile barrier system; sterile medical device | ISO 13485:2016 §3.19, §3.20 | Relevant only if you supply sterile devices. |
 | Medical device file; technical documentation | ISO 13485:2016 §4.2.3; EU MDR Annexes II and III | The documentation for each device type or family. |
 | Unique Device Identification (UDI) | EU MDR Article 2 and Article 27 | The identification system for devices on the market (SOP-10). |
-| Quality Management System Regulation (QMSR) | 21 CFR Part 820 | FDA's device quality system regulation. Incorporates ISO 13485:2016 by reference, with additional FDA requirements; in force since 02/02/2026. |
+| Quality Management System Regulation (QMSR) | 21 CFR Part 820 | FDA's device quality system regulation. Incorporates ISO 13485:2016 and ISO 9000:2015 clause 3 by reference, with additional FDA requirements; in force since 02/02/2026. |
 | Nonconformity | ISO 9000:2015 §3.6.9 | A requirement not met. |
 | Correction | ISO 9000:2015 §3.12.3 | Fixing a detected nonconformity, that is, the instance. |
 | Corrective action | ISO 9000:2015 §3.12.2 | Removing the cause of a nonconformity so it does not happen again. |
