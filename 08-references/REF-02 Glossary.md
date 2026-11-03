@@ -66,44 +66,44 @@ related: ["QM-01", "SOP-01", "SOP-02", "SOP-17"]
 
 ## 3. Regulatory Terms
 
-> These terms have formal definitions in standards and regulations, and those definitions are not reproduced here: standards are copyright, and regulations should be read in their current official text. The source column says where each definition is. The note is a plain-language reading for orientation only. It is not the definition and must not be quoted as one. ISO 13485:2016 uses the terms of ISO 9000:2015 as well as its own clause 3. Remove terms that do not apply to you and add the ones your markets need (for example, FDA terms). [verify: every clause and article reference below against the current official text before approval]
+> These terms have formal definitions in standards and regulations, and those definitions are not reproduced here: standards are copyright, and regulations should be read in their current official text. The source column says where each definition is. The note is a plain-language reading for orientation only. It is not the definition and must not be quoted as one. ISO 13485:2016 uses the terms of ISO 9000:2015 as well as its own clause 3. Remove terms that do not apply to you and add the ones your markets need (for example, FDA terms).
 
 | Term | Formal definition in | Plain-language note (not the definition) |
 |------|---------------------|-------------------------------------------|
-| Medical device | ISO 13485:2016 §3.11; EU MDR Article 2 | Defined by what the manufacturer intends the product to be used for, not by the technology. |
+| Medical device | ISO 13485:2016 §3; EU MDR Article 2 | Defined by what the manufacturer intends the product to be used for, not by the technology. |
 | Intended purpose | EU MDR Article 2 | What the manufacturer says the device is for. It drives classification and the evidence needed. |
-| Manufacturer | ISO 13485:2016 §3.10; EU MDR Article 2 | The party responsible for a device placed on the market under its name, whether or not it makes the device itself. |
-| Authorized representative | ISO 13485:2016 §3.2; EU MDR Article 2 | Acts on behalf of a manufacturer based outside the jurisdiction, for specified tasks. |
-| Importer | ISO 13485:2016 §3.7; EU MDR Article 2 | Places a device from outside the jurisdiction on its market. |
-| Distributor | ISO 13485:2016 §3.5; EU MDR Article 2 | Makes a device available further down the supply chain. |
+| Manufacturer | ISO 13485:2016 §3; EU MDR Article 2 | The party responsible for a device placed on the market under its name, whether or not it makes the device itself. |
+| Authorized representative | ISO 13485:2016 §3; EU MDR Article 2 | Acts on behalf of a manufacturer based outside the jurisdiction, for specified tasks. |
+| Importer | ISO 13485:2016 §3; EU MDR Article 2 | Places a device from outside the jurisdiction on its market. |
+| Distributor | ISO 13485:2016 §3; EU MDR Article 2 | Makes a device available further down the supply chain. |
 | Economic operator | EU MDR Article 2 | Collective term covering the manufacturer, authorised representative, importer, distributor and certain others. |
 | Notified body | EU MDR Article 2 | A body designated to assess conformity of devices under the regulation. |
-| Labelling | ISO 13485:2016 §3.8 | The label, instructions for use and other information supplied with the device. Wider than the label alone. |
-| Life-cycle | ISO 13485:2016 §3.9 | Every phase of a device, from first concept to final disposal. |
-| Product | ISO 13485:2016 §3.15 | The result of a process. In ISO 13485 the requirements for product also apply to services. |
-| Purchased product | ISO 13485:2016 §3.16 | Product, including services, supplied by an outside party. |
-| Medical device family | ISO 13485:2016 §3.12 | A group of devices that share basic design and performance characteristics. |
-| Complaint | ISO 13485:2016 §3.4 | Any communication alleging a deficiency in a device after release. Much wider than a formal customer complaint. |
-| Advisory notice | ISO 13485:2016 §3.1 | A notice issued after delivery giving extra information or saying what action to take. |
-| Post-market surveillance | ISO 13485:2016 §3.14; EU MDR Article 2 | Systematic gathering and analysis of experience from devices on the market. |
+| Labelling | ISO 13485:2016 §3 | The label, instructions for use and other information supplied with the device. Wider than the label alone. |
+| Life-cycle | ISO 13485:2016 §3 | Every phase of a device, from first concept to final disposal. |
+| Product | ISO 13485:2016 §3 | The result of a process. In ISO 13485 the requirements for product also apply to services. |
+| Purchased product | ISO 13485:2016 §3 | Product, including services, supplied by an outside party. |
+| Medical device family | ISO 13485:2016 §3 | A group of devices that share basic design and performance characteristics. |
+| Complaint | ISO 13485:2016 §3 | Any communication alleging a deficiency in a device after release. Much wider than a formal customer complaint. |
+| Advisory notice | ISO 13485:2016 §3 | A notice issued after delivery giving extra information or saying what action to take. |
+| Post-market surveillance | ISO 13485:2016 §3; EU MDR Article 2 | Systematic gathering and analysis of experience from devices on the market. |
 | Incident; serious incident | EU MDR Article 2 | The events that may trigger vigilance reporting (SOP-16). |
 | Field safety corrective action; field safety notice | EU MDR Article 2 | Action taken on devices already on the market for safety reasons, and the notice that communicates it. |
-| Clinical evaluation | ISO 13485:2016 §3.3; EU MDR Article 2 | Assessment of clinical data to show safety and performance. |
-| Performance evaluation | ISO 13485:2016 §3.13 | The equivalent assessment for in vitro diagnostic devices. |
-| Risk | ISO 13485:2016 §3.17; ISO 14971 | Relates to the probability of harm and its severity. |
-| Risk management | ISO 13485:2016 §3.18; ISO 14971 | The systematic process for identifying, evaluating, controlling and monitoring risk. |
+| Clinical evaluation | ISO 13485:2016 §3; EU MDR Article 2 | Assessment of clinical data to show safety and performance. |
+| Performance evaluation | ISO 13485:2016 §3 | The equivalent assessment for in vitro diagnostic devices. |
+| Risk | ISO 13485:2016 §3; ISO 14971 | Relates to the probability of harm and its severity. |
+| Risk management | ISO 13485:2016 §3; ISO 14971 | The systematic process for identifying, evaluating, controlling and monitoring risk. |
 | Hazard; hazardous situation; harm | ISO 14971:2019 §3 | A potential source of harm; the circumstance that exposes someone to it; the injury or damage itself. |
 | Risk control; residual risk | ISO 14971:2019 §3 | Measures that reduce risk; the risk left after them. |
-| Sterile barrier system; sterile medical device | ISO 13485:2016 §3.19, §3.20 | Relevant only if you supply sterile devices. |
+| Sterile barrier system; sterile medical device | ISO 13485:2016 §3 | Relevant only if you supply sterile devices. |
 | Medical device file; technical documentation | ISO 13485:2016 §4.2.3; EU MDR Annexes II and III | The documentation for each device type or family. |
 | Unique Device Identification (UDI) | EU MDR Article 2 and Article 27 | The identification system for devices on the market (SOP-10). |
 | Quality Management System Regulation (QMSR) | 21 CFR Part 820 | FDA's device quality system regulation. Incorporates ISO 13485:2016 and ISO 9000:2015 clause 3 by reference, with additional FDA requirements; in force since 02/02/2026. |
-| Nonconformity | ISO 9000:2015 §3.6.9 | A requirement not met. |
-| Correction | ISO 9000:2015 §3.12.3 | Fixing a detected nonconformity, that is, the instance. |
-| Corrective action | ISO 9000:2015 §3.12.2 | Removing the cause of a nonconformity so it does not happen again. |
-| Preventive action | ISO 9000:2015 §3.12.1 | Removing the cause of a potential nonconformity before it happens. |
-| Verification | ISO 9000:2015 §3.8.12 | Confirming that specified requirements have been met. |
-| Validation | ISO 9000:2015 §3.8.13 | Confirming that the requirements for a specific intended use have been met. |
+| Nonconformity | ISO 9000:2015 §3 | A requirement not met. |
+| Correction | ISO 9000:2015 §3 | Fixing a detected nonconformity, that is, the instance. |
+| Corrective action | ISO 9000:2015 §3 | Removing the cause of a nonconformity so it does not happen again. |
+| Preventive action | ISO 9000:2015 §3 | Removing the cause of a potential nonconformity before it happens. |
+| Verification | ISO 9000:2015 §3 | Confirming that specified requirements have been met. |
+| Validation | ISO 9000:2015 §3 | Confirming that the requirements for a specific intended use have been met. |
 
 ## 4. Revision History
 
