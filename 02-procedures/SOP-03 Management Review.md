@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: []
+related: ["SOP-06"]
 ---
 
 # Management Review
@@ -24,6 +24,8 @@ related: []
 **Document ID:** SOP-03
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
+
+> **Risk link.** Management review is a suitable place for top management's review of the risk management process (ISO 14971 §4.2) and of the latest QMS risk assessment ([[SOP-06 Risk Management]]) [verify: ISO 13485:2016 §5.6.2 and ISO 14971:2019 §4.2].
 
 ## 1. Purpose
 
