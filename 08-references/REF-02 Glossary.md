@@ -36,7 +36,7 @@ related: ["QM-01", "SOP-01", "SOP-02", "SOP-17"]
 | Top management | [e.g. quality policy, quality objectives, resources, management review] | ISO 13485:2016 §5 | [Who makes up top management in {{ORGANISATION_NAME}}] |
 | Management representative | [e.g. making sure QMS processes are documented, reporting on QMS effectiveness, promoting awareness of regulatory requirements] | ISO 13485:2016 §5.5.2 | Often the same person as the Quality Manager in a small company |
 | Quality Manager | [e.g. running the QMS day to day: document control, records, CAPA, internal audit programme] | Your own role name | The procedure skeletons use this name. If you call the role something else, rename it here and in every document |
-| Person responsible for regulatory compliance (PRRC) | [responsibilities as set out in the regulation] | EU MDR Article 15, if you place devices on the EU market | Small and micro enterprises have different options for how the PRRC is provided [verify: Article 15 against the current official text] |
+| Person responsible for regulatory compliance (PRRC) | [responsibilities as set out in the regulation] | EU MDR Article 15, if you place devices on the EU market | Small and micro enterprises have different options for how the PRRC is provided |
 | Process owner | [e.g. owns a process, its procedure and its performance measures] | Your own role name | |
 | Internal auditor | [e.g. plans and carries out internal audits, reports findings] | ISO 13485:2016 §8.2.4 | Does not audit their own work |
 | Document author | Drafts and revises controlled documents | SOP-01 | |
