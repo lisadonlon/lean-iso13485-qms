@@ -163,7 +163,7 @@ Records never carry `revision`, `effective_date`, `review_due`, `review_interval
 | `make status` | Branch + dirty files + last commit + tags at HEAD |
 | `make approved` | List documents with `status: approved` |
 | `make draft DOC=SOP-XX REV=1.1` | Create a draft branch for a revision |
-| `make approve DOC=SOP-XX REV=1.0` | Create an annotated tag on HEAD |
+| `make approve DOC=SOP-XX REV=1.0` | Create an annotated tag on HEAD (add `SIGN=1` for a signed tag) |
 | `make push` | `git push --follow-tags` |
 | `python3 scripts/init_qms.py` | Personalise the template (org name etc.) |
 
@@ -184,7 +184,7 @@ The 26 checks are split IQ (installation: folders, git, plugins, templates), OQ 
 | Tooling | `tooling: {description}` | `tooling: add export script` |
 | Housekeeping | `chore: {description}` | `chore: gitignore per-user config` |
 
-Tags: `{DOC-ID}-v{revision}` (e.g. `SOP-01-v1.0`). Always annotated (`git tag -a`), never lightweight — annotated tags carry the tagger, date and message that constitute approval evidence.
+Tags: `{DOC-ID}-v{revision}` (e.g. `SOP-01-v1.0`). Always annotated (`git tag -a`) or signed (`git tag -s`), never lightweight. An annotated tag records the approved commit, a date and a message, but the tagger name comes from local git settings and anyone can set it. On its own it shows what was approved and when, not reliably who. A signed tag adds cryptographic evidence of who created it; see `HOWTO.md` §3.1.
 
 ---
 

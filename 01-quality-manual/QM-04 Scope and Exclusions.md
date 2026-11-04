@@ -65,7 +65,9 @@ The QMS of {{ORGANISATION_NAME}} applies to: [state the devices, the activities 
 
 ## 3. Regulatory Context
 
-[List the regulations and standards the devices are placed on the market under — e.g. EU MDR 2017/745, US FDA 21 CFR 820, plus harmonised standards such as ISO 14971, IEC 62304, IEC 60601.]
+[List the regulations and standards the devices are placed on the market under — e.g. EU MDR 2017/745, US FDA 21 CFR Part 820, plus harmonised standards such as ISO 14971, IEC 62304, IEC 60601.]
+
+> **US market.** FDA's Quality Management System Regulation (QMSR) amended 21 CFR Part 820 to incorporate ISO 13485:2016 and ISO 9000:2015 clause 3 by reference, with some additional FDA requirements, and has been in force since 02/02/2026. Guidance, templates and checklists written for the earlier Quality System Regulation may be out of date.
 
 ## Revision History
 

@@ -25,7 +25,7 @@ Everyday-language walkthrough of the routine operations. Pair this with `AGENTS.
 | Python 3.9+ | Validation and export scripts | Usually pre-installed |
 | Make | Workflow shortcuts | Usually pre-installed |
 | Pandoc | Markdown → HTML during PDF export | `brew install pandoc` |
-| WeasyPrint | HTML → PDF | `pip3 install weasyprint --break-system-packages` |
+| WeasyPrint | HTML → PDF | `brew install weasyprint` (macOS) or `pipx install weasyprint` |
 | Obsidian | Authoring environment | [obsidian.md](https://obsidian.md) |
 
 ### Obsidian plugins (Settings → Community plugins → Browse)
@@ -90,7 +90,7 @@ The full §4.2.4 ceremony, for releasing a document at Rev 1.0. Allow ~10 minute
    ```bash
    make approve DOC=SOP-XX REV=1.0
    ```
-   This creates an annotated tag `SOP-XX-v1.0` carrying approver, date and message.
+   This creates an annotated tag `SOP-XX-v1.0` carrying approver, date and message. To sign it instead, run `make approve DOC=SOP-XX REV=1.0 SIGN=1` once signing is set up (§3.1).
 7. **Push** commit + tag: `make push`.
 8. **Run validation** to produce the VAL record: `make validate` (expect 26/26, allowing for IQ-04 if plugins aren't installed on this machine).
 9. **Commit the VAL record:**
@@ -101,6 +101,24 @@ The full §4.2.4 ceremony, for releasing a document at Rev 1.0. Allow ~10 minute
    ```
 
 The document is now the controlled, approved version. The tag captures its exact state; the VAL record shows the QMS was healthy at approval time.
+
+### 3.1 What an approval tag proves
+
+An annotated tag records which commit was approved, when, and a message naming the approver. It does not prove who created it: the tagger name and email come from local git settings, and the approver in the message is typed text. Anyone with write access to the repository could create a tag in someone else's name.
+
+To make approvals attributable:
+
+- **Sign approval tags.** With git 2.34 or later you can sign with an SSH key:
+  ```bash
+  git config gpg.format ssh
+  git config user.signingkey ~/.ssh/id_ed25519.pub
+  make approve DOC=SOP-XX REV=1.0 SIGN=1
+  ```
+  To verify, list the trusted keys in an allowed-signers file (`git config gpg.ssh.allowedSignersFile <file>`) and run `git tag -v SOP-XX-v1.0`. GPG keys work too.
+- **Limit who can push to `main` and create tags**, for example with branch and tag protection on your git host.
+- **Record who holds the approver role** (see `REF-02 Glossary`, section 1).
+
+If FDA 21 CFR Part 11 applies to your electronic records and signatures, do not assume that git tags, signed or not, meet its requirements for electronic signatures. Assess Part 11 separately and take advice where needed.
 
 ---
 
@@ -160,4 +178,4 @@ Don't give external parties git access. Generate a PDF snapshot instead.
 
 Real, persistent failures should be raised as CAPAs — that's the audit-quality way to track them.
 
-**PDF export dependency errors** — the script tells you what's missing: `brew install pandoc`, `pip3 install weasyprint --break-system-packages`, and on some systems `brew install pango libffi`.
+**PDF export dependency errors** — the script tells you what's missing: `brew install pandoc`, and `brew install weasyprint` (macOS) or `pipx install weasyprint`. If a pipx install of WeasyPrint reports missing libraries, install Pango (`brew install pango` on macOS, or your package manager elsewhere).
