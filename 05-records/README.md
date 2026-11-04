@@ -19,6 +19,7 @@ dated, attributed correction in the record's Corrections section.
 | `complaints/` | Complaint and feedback records | Hand (from template) |
 | `changes/` | Change control records | Hand (from template) |
 | `software-validation/` | `VAL-YYYY-NN` script results; `SVR-YYYY-NN` software validation records (SOP-17) | VAL: `scripts/validate_qms.py` only; SVR: hand (from template) |
+| `risk/` | `RSK-YYYY-NN` QMS process risk assessments (device risk lives in each risk management file) | Hand (from template) |
 | `distribution/` | `DIST-YYYY-NN` distribution manifests | `scripts/export_for_audit.py` only |
 
 Do not hand-edit `VAL-` files in `software-validation/` or anything in

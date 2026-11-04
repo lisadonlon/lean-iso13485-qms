@@ -60,6 +60,7 @@ related: ["QM-01", "SOP-01", "SOP-02", "SOP-17"]
 | Validation approach | How rigorously a piece of software is validated, chosen by the risk of using it: use as-is, happy path, or plan and report. | SOP-17 |
 | Intended use (of software) | What {{ORGANISATION_NAME}} relies on a piece of software to do within the QMS or a process. | SOP-17 |
 | Acceptance criterion | A pass/fail condition set before testing starts. | SOP-17 |
+| Device risk; QMS process risk | Risk from the device (ISO 14971, risk management file) versus risk to how the QMS processes run (QMS risk assessment records). | SOP-06 |
 | [Your product, device and service names] | | |
 | [Your abbreviations] | | |
 
@@ -91,6 +92,8 @@ related: ["QM-01", "SOP-01", "SOP-02", "SOP-17"]
 | Performance evaluation | ISO 13485:2016 §3 | The equivalent assessment for in vitro diagnostic devices. |
 | Risk | ISO 13485:2016 §3; ISO 14971 | Relates to the probability of harm and its severity. |
 | Risk management | ISO 13485:2016 §3; ISO 14971 | The systematic process for identifying, evaluating, controlling and monitoring risk. |
+| Hazard; hazardous situation; harm | ISO 14971:2019 §3 | A potential source of harm; the circumstance that exposes someone to it; the injury or damage itself. |
+| Risk control; residual risk | ISO 14971:2019 §3 | Measures that reduce risk; the risk left after them. |
 | Sterile barrier system; sterile medical device | ISO 13485:2016 §3 | Relevant only if you supply sterile devices. |
 | Medical device file; technical documentation | ISO 13485:2016 §4.2.3; EU MDR Annexes II and III | The documentation for each device type or family. |
 | Unique Device Identification (UDI) | EU MDR Article 2 and Article 27 | The identification system for devices on the market (SOP-10). |

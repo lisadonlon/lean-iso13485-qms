@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: []
+related: ["SOP-06"]
 ---
 
 # Complaint Handling and Feedback
@@ -24,6 +24,8 @@ related: []
 **Document ID:** SOP-15
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
+
+> **Risk link.** Complaints and feedback feed into the risk management file ([[SOP-06 Risk Management]]).
 
 ## 1. Purpose
 

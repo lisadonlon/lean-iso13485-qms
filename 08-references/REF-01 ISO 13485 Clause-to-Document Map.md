@@ -29,6 +29,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | Clause | Title | Controlling document(s) |
 |--------|-------|--------------------------|
 | 4.1 | General QMS requirements | [[QM-01 Quality Manual]] |
+| 4.1.2 | Risk-based approach to QMS processes | [[SOP-06 Risk Management]] |
 | 4.1.6 | Validation of software used in the QMS | [[SOP-17 Software Validation]] |
 | 4.2.1–4.2.2 | Documentation / Quality manual | [[QM-01 Quality Manual]], [[QM-04 Scope and Exclusions]] |
 | 4.2.3 | Medical device file | [Add document] |
@@ -43,7 +44,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 7.1 | Planning of realization / risk management | [[SOP-06 Risk Management]] |
 | 7.2 | Customer-related processes | [Add document] |
 | 7.3 | Design and development | [[SOP-07 Design and Development Control]] |
-| 7.4 | Purchasing | [[SOP-08 Purchasing and Supplier Control]] |
+| 7.4 | Purchasing | [[SOP-08 Purchasing and Supplier Control]], [[SOP-06 Risk Management]] |
 | 7.5.1–7.5.5 | Production and service provision | [[SOP-09 Production and Service Provision]] |
 | 7.5.6 | Validation of processes (including software) | [[SOP-09 Production and Service Provision]], [[SOP-17 Software Validation]] |
 | 7.5.7 | Validation of sterilisation and sterile barrier systems | [[SOP-09 Production and Service Provision]] (if applicable) |
@@ -52,7 +53,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 7.5.11 | Preservation of product | [[SOP-09 Production and Service Provision]] (if applicable) |
 | 7.6 | Monitoring and measuring equipment | [[SOP-11 Control of Monitoring and Measuring Equipment]] |
 | 8.1 | Measurement, analysis and improvement: general | [[QM-01 Quality Manual]] |
-| 8.2.1–8.2.2 | Feedback / complaint handling | [[SOP-15 Complaint Handling and Feedback]] |
+| 8.2.1–8.2.2 | Feedback / complaint handling | [[SOP-15 Complaint Handling and Feedback]], [[SOP-06 Risk Management]] |
 | 8.2.3 | Reporting to regulatory authorities | [[SOP-16 Vigilance and Regulatory Reporting]] |
 | 8.2.4 | Internal audit | [[SOP-12 Internal Audit]] |
 | 8.2.5 | Monitoring and measurement of processes | [[QM-03 Quality Objectives]] |

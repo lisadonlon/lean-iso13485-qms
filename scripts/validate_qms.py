@@ -62,6 +62,7 @@ EXPECTED_TEMPLATES = [
     "New ISMS Document.md",
     "New Procedure.md",
     "New Process Map.md",
+    "New QMS Risk Assessment.md",
     "New Record.md",
     "New Software Validation Record.md",
     "New Work Instruction.md",
@@ -75,6 +76,7 @@ RECORD_SUBDIRS = [
     "05-records/complaints",
     "05-records/changes",
     "05-records/software-validation",
+    "05-records/risk",
 ]
 
 DASHBOARDS = [
@@ -143,11 +145,13 @@ RECORD_TEMPLATES = [
     "New Record.md",
     "New CAPA.md",
     "New Audit Record.md",
+    "New QMS Risk Assessment.md",
     "New Software Validation Record.md",
 ]
 SIGNOFF_TEMPLATES = [
     "New CAPA.md",
     "New Audit Record.md",
+    "New QMS Risk Assessment.md",
     "New Software Validation Record.md",
 ]
 
