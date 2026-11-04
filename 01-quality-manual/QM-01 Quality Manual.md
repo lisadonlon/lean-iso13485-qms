@@ -58,6 +58,7 @@ The QMS is operated as a set of interacting processes. [Describe each process: i
 | Process | Controlling procedure | Clause |
 |---------|----------------------|--------|
 | Document and record control | [[SOP-01 Document Control]], [[SOP-02 Control of Records]] | 4.2 |
+| Software validation | [[SOP-17 Software Validation]] | 4.1.6, 7.5.6 |
 | Management responsibility and review | [[SOP-03 Management Review]] | 5 |
 | Resource and competence management | [[SOP-04 Human Resources and Competence]] | 6 |
 | Risk management | [[SOP-06 Risk Management]] | 7.1 |
@@ -71,12 +72,14 @@ The QMS is operated as a set of interacting processes. [Describe each process: i
 
 ## 6. Documentation Structure (mandatory — §4.2.1)
 
-| Tier | Content | Location |
+| Documentation | Content | Location |
 |------|---------|----------|
 | 1 — Manual & policy | This manual, quality policy, objectives, scope | `01-quality-manual/` |
 | 2 — Procedures | What is done and who does it | `02-procedures/` |
 | 3 — Work instructions / forms | How specific tasks are performed; blank forms | `03-work-instructions/`, `04-forms-templates/` |
 | 4 — Records | Evidence that the QMS is operating | `05-records/` |
+
+Role names and terms used throughout the QMS are defined in [[REF-02 Glossary]].
 
 Document control is operated through Git per [[SOP-01 Document Control]]: the `main` branch is the controlled copy and annotated tags mark approved versions.
 
@@ -86,7 +89,7 @@ Document control is operated through Git per [[SOP-01 Document Control]]: the `m
 
 ## 8. Management Responsibility
 
-[Identify top management, the appointed management representative (§5.5.2), and the responsibilities and authorities for quality (§5.5.1).]
+[Identify top management, the appointed management representative (§5.5.2), and the responsibilities and authorities for quality (§5.5.1). Use the role names in [[REF-02 Glossary]] section 1.]
 
 ## 9. Revision History
 

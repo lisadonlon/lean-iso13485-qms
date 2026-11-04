@@ -2,7 +2,9 @@
 """QMS Software Validation Script
 
 Generates a VAL-YYYY-NN markdown record in 05-records/software-validation/.
-Runs 24 automated checks across IQ (installation), OQ (operational), and PQ (performance).
+Runs 26 automated checks across IQ (installation), OQ (operational), and PQ (performance).
+Each check is a preset acceptance criterion; the VAL record reports the result of
+these checks only (see SOP-17 Software Validation).
 
 Stdlib-only. No external dependencies.
 
@@ -61,6 +63,7 @@ EXPECTED_TEMPLATES = [
     "New Procedure.md",
     "New Process Map.md",
     "New Record.md",
+    "New Software Validation Record.md",
     "New Work Instruction.md",
 ]
 
@@ -105,6 +108,48 @@ FRONTMATTER_FIELDS = [
 ]
 
 VALID_STATUSES = {"draft", "review", "approved", "obsolete"}
+
+# Records are not controlled documents: they are made once and not revised, so
+# they carry no revision, effective date, review date or supersession fields.
+RECORD_FIELDS = [
+    "doc_id",
+    "title",
+    "doc_type",
+    "standard",
+    "clauses",
+    "record_date",
+    "author",
+    "tags",
+    "related",
+]
+
+# Records that are signed off (CAPA, audit, software validation report, ...)
+# also carry these. If a record has any of them it must have all of them.
+SIGNOFF_FIELDS = ["status", "approver", "approved_date"]
+
+RECORD_STATUSES = {"draft", "review", "approved"}
+
+# Fields that belong to controlled documents only and must not appear on a record.
+DOCUMENT_ONLY_FIELDS = [
+    "revision",
+    "effective_date",
+    "review_due",
+    "review_interval",
+    "supersedes",
+    "change_summary",
+]
+
+RECORD_TEMPLATES = [
+    "New Record.md",
+    "New CAPA.md",
+    "New Audit Record.md",
+    "New Software Validation Record.md",
+]
+SIGNOFF_TEMPLATES = [
+    "New CAPA.md",
+    "New Audit Record.md",
+    "New Software Validation Record.md",
+]
 
 # Folders that contain controlled documents (for PQ checks)
 CONTROLLED_DOC_FOLDERS = [
@@ -243,6 +288,28 @@ def run_git(*args: str) -> tuple[int, str]:
         return 1, ""
 
 
+def get_records() -> list[Path]:
+    """Return all record files under 05-records/ (README files excluded)."""
+    records_dir = VAULT_ROOT / "05-records"
+    if not records_dir.is_dir():
+        return []
+    return sorted(p for p in records_dir.rglob("*.md") if p.name.lower() != "readme.md")
+
+
+def frontmatter_keys(text: str) -> set[str] | None:
+    """Top-level YAML keys of a file's frontmatter, or None if it has none."""
+    if not text.startswith("---"):
+        return None
+    end = text.find("\n---", 3)
+    if end == -1:
+        return None
+    keys = set()
+    for line in text[3:end].splitlines():
+        if line and not line[0].isspace() and ":" in line:
+            keys.add(line.partition(":")[0].strip())
+    return keys
+
+
 def get_controlled_docs() -> list[Path]:
     """Return all .md files in controlled document folders."""
     docs = []
@@ -256,7 +323,7 @@ def get_controlled_docs() -> list[Path]:
 
 
 # ---------------------------------------------------------------------------
-# IQ Tests — Installation Qualification (6 tests, all tiers)
+# IQ Tests — Installation Qualification (6 tests)
 # ---------------------------------------------------------------------------
 
 def iq_01_vault_folders(run: ValidationRun) -> None:
@@ -349,7 +416,7 @@ def iq_06_record_subdirs(run: ValidationRun) -> None:
 
 
 # ---------------------------------------------------------------------------
-# OQ Tests — Operational Qualification (9 tests, Tier 2+3)
+# OQ Tests — Operational Qualification (10 tests)
 # ---------------------------------------------------------------------------
 
 def oq_01_template_frontmatter(run: ValidationRun) -> None:
@@ -551,8 +618,37 @@ def oq_09_all_dashboards_exist(run: ValidationRun) -> None:
                            f"All {len(DASHBOARDS)} dashboards present"))
 
 
+def oq_10_record_templates(run: ValidationRun) -> None:
+    """OQ-10: Record templates use the record schema, not the document schema."""
+    name = "Record templates use the record schema"
+    templates_dir = VAULT_ROOT / "_templates"
+    issues = []
+    for tpl_name in RECORD_TEMPLATES:
+        tpl_path = templates_dir / tpl_name
+        if not tpl_path.is_file():
+            issues.append(f"{tpl_name}: not found")
+            continue
+        keys = frontmatter_keys(tpl_path.read_text(encoding="utf-8"))
+        if keys is None:
+            issues.append(f"{tpl_name}: no frontmatter")
+            continue
+        missing = [f for f in RECORD_FIELDS if f not in keys]
+        if tpl_name in SIGNOFF_TEMPLATES:
+            missing += [f for f in SIGNOFF_FIELDS if f not in keys]
+        extra = [f for f in DOCUMENT_ONLY_FIELDS if f in keys]
+        if missing:
+            issues.append(f"{tpl_name}: missing {', '.join(missing)}")
+        if extra:
+            issues.append(f"{tpl_name}: has document-only {', '.join(extra)}")
+    if issues:
+        run.add(TestResult("OQ-10", name, "OQ", "FAIL", "; ".join(issues)))
+    else:
+        run.add(TestResult("OQ-10", name, "OQ", "PASS",
+                           f"All {len(RECORD_TEMPLATES)} record templates use the record schema"))
+
+
 # ---------------------------------------------------------------------------
-# PQ Tests — Performance Qualification (8 tests, Tier 3 only)
+# PQ Tests — Performance Qualification (10 tests)
 # ---------------------------------------------------------------------------
 
 def pq_01_complete_frontmatter(run: ValidationRun) -> None:
@@ -802,6 +898,66 @@ def pq_09_git_tag_exists(run: ValidationRun) -> None:
                            f"All {approved_count} approved documents have matching annotated tags"))
 
 
+def pq_10_record_frontmatter(run: ValidationRun) -> None:
+    """PQ-10: Records use the record schema.
+
+    Every file under 05-records/ (README files excepted) must carry the record
+    fields, must not carry document-only fields (revision, effective_date,
+    review_due, review_interval, supersedes, change_summary), and, if it carries
+    any sign-off field, must carry all of them. An approved record needs its
+    approver and approved_date filled in.
+    """
+    name = "Records use the record schema"
+    records = get_records()
+    if not records:
+        run.add(TestResult("PQ-10", name, "PQ", "PASS", "No records found"))
+        return
+
+    date_re = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    issues = []
+    for rec in records:
+        rel = rec.relative_to(VAULT_ROOT / "05-records")
+        keys = frontmatter_keys(rec.read_text(encoding="utf-8"))
+        fm = parse_frontmatter(rec) or {}
+        if keys is None:
+            issues.append(f"{rel}: no frontmatter")
+            continue
+        missing = [f for f in RECORD_FIELDS if f not in keys]
+        if missing:
+            issues.append(f"{rel}: missing {', '.join(missing)}")
+        extra = [f for f in DOCUMENT_ONLY_FIELDS if f in keys]
+        if extra:
+            issues.append(f"{rel}: has document-only {', '.join(extra)}")
+        doc_type = fm.get("doc_type", "").strip('"').strip("'")
+        if doc_type and doc_type != "record":
+            issues.append(f"{rel}: doc_type is {doc_type}, expected record")
+        signoff = [f for f in SIGNOFF_FIELDS if f in keys]
+        if signoff and len(signoff) != len(SIGNOFF_FIELDS):
+            absent = [f for f in SIGNOFF_FIELDS if f not in keys]
+            issues.append(f"{rel}: incomplete sign-off fields, missing {', '.join(absent)}")
+        status = fm.get("status", "").strip('"').strip("'")
+        if status and status not in RECORD_STATUSES:
+            issues.append(f"{rel}: status {status} not one of {', '.join(sorted(RECORD_STATUSES))}")
+        if status == "approved":
+            for f in ("approver", "approved_date"):
+                if not fm.get(f, "").strip('"').strip("'"):
+                    issues.append(f"{rel}: approved but {f} is blank")
+        record_date = fm.get("record_date", "").strip('"').strip("'")
+        if "record_date" in keys and not record_date:
+            issues.append(f"{rel}: record_date is blank")
+        for f in ("record_date", "approved_date"):
+            val = fm.get(f, "").strip('"').strip("'")
+            if val and not date_re.match(val):
+                issues.append(f"{rel}: {f}={val} is not YYYY-MM-DD")
+
+    if issues:
+        run.add(TestResult("PQ-10", name, "PQ", "FAIL",
+                           "; ".join(issues[:5]) + (f" (+{len(issues)-5} more)" if len(issues) > 5 else "")))
+    else:
+        run.add(TestResult("PQ-10", name, "PQ", "PASS",
+                           f"All {len(records)} records use the record schema"))
+
+
 # ---------------------------------------------------------------------------
 # Report generation
 # ---------------------------------------------------------------------------
@@ -832,19 +988,10 @@ def generate_record(run: ValidationRun, val_id: str) -> str:
         "doc_type: record",
         f"standard: {CONFIG['standard']}",
         'clauses: ["4.1.6"]',
-        'revision: "1.0"',
-        "status: draft",
-        f"effective_date: {today_iso}",
-        "review_due:",
-        "review_interval: 12",
+        f"record_date: {today_iso}",
         f"author: {CONFIG['quality_manager']}",
-        "reviewer:",
-        f"approver: {CONFIG['quality_manager']}",
-        "approved_date:",
-        'change_summary: "Automated validation run"',
         "tags: [qms, record, validation]",
-        "supersedes:",
-        'related: []',
+        'related: ["SOP-17"]',
         f"validation_status: {run.overall}",
         "validation_scope: Full (IQ + OQ + PQ)",
         "---",
@@ -856,7 +1003,10 @@ def generate_record(run: ValidationRun, val_id: str) -> str:
         f"**Validation Script:** `scripts/validate_qms.py`",
         f"**Overall Result:** **{run.overall}**",
         "",
-        "**Scope:** Validation of computerised QMS tooling per ISO 13485:2016 §4.1.6.",
+        "**Scope:** Result of the preset acceptance checks in `scripts/validate_qms.py` "
+        "against this vault (ISO 13485:2016 §4.1.6). Each check is an acceptance criterion "
+        "fixed before the run: PASS meets it, FAIL does not. This record covers these checks "
+        "only; other software is classified and validated under SOP-17 Software Validation.",
         "",
     ]
 
@@ -897,13 +1047,8 @@ def generate_record(run: ValidationRun, val_id: str) -> str:
     lines.append(f"| Validator | {CONFIG['quality_manager']} | | |")
     lines.append(f"| Quality Manager | {CONFIG['quality_manager']} | | |")
     lines.append("")
-
-    # Revision history
-    lines.append("## Revision History")
-    lines.append("")
-    lines.append("| Rev | Date | Author | Change Summary |")
-    lines.append("|-----|------|--------|---------------|")
-    lines.append(f"| 1.0 | {today_body} | {CONFIG['quality_manager']} | Initial automated validation |")
+    lines.append("Validation records are made once and are not revised. Re-run "
+                 "`make validate` to produce a new record.")
 
     return "\n".join(lines) + "\n"
 
@@ -931,7 +1076,7 @@ def main() -> int:
     iq_05_templates(run)
     iq_06_record_subdirs(run)
 
-    # OQ tests (9)
+    # OQ tests (10)
     oq_01_template_frontmatter(run)
     oq_02_template_nn_format(run)
     oq_03_template_date_formats(run)
@@ -941,8 +1086,9 @@ def main() -> int:
     oq_07_capa_log_query(run)
     oq_08_audit_schedule_query(run)
     oq_09_all_dashboards_exist(run)
+    oq_10_record_templates(run)
 
-    # PQ tests (9)
+    # PQ tests (10)
     pq_01_complete_frontmatter(run)
     pq_02_docid_matches_filename(run)
     pq_03_valid_status(run)
@@ -952,6 +1098,7 @@ def main() -> int:
     pq_07_git_clean(run)
     pq_08_branch_naming(run)
     pq_09_git_tag_exists(run)
+    pq_10_record_frontmatter(run)
 
     # Print results to console
     print(f"\n{CONFIG['organisation']} QMS Validation — {date.today().strftime('%d/%m/%Y')}")

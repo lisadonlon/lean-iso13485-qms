@@ -29,6 +29,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | Clause | Title | Controlling document(s) |
 |--------|-------|--------------------------|
 | 4.1 | General QMS requirements | [[QM-01 Quality Manual]] |
+| 4.1.6 | Validation of software used in the QMS | [[SOP-17 Software Validation]] |
 | 4.2.1–4.2.2 | Documentation / Quality manual | [[QM-01 Quality Manual]], [[QM-04 Scope and Exclusions]] |
 | 4.2.3 | Medical device file | [Add document] |
 | 4.2.4 | Control of documents | [[SOP-01 Document Control]] |
@@ -43,6 +44,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 7.3 | Design and development | [[SOP-07 Design and Development Control]] |
 | 7.4 | Purchasing | [[SOP-08 Purchasing and Supplier Control]] |
 | 7.5.1–7.5.5 | Production and service provision | [[SOP-09 Production and Service Provision]] |
+| 7.5.6 | Validation of processes (including software) | [[SOP-09 Production and Service Provision]], [[SOP-17 Software Validation]] |
 | 7.5.8–7.5.9 | Identification and traceability | [[SOP-10 Identification and Traceability]] |
 | 7.6 | Monitoring and measuring equipment | [[SOP-11 Control of Monitoring and Measuring Equipment]] |
 | 8.2.1–8.2.2 | Feedback / complaint handling | [[SOP-15 Complaint Handling and Feedback]] |

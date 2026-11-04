@@ -25,7 +25,7 @@ TABLE
   effective_date AS "Effective",
   review_due AS "Review Due"
 FROM ""
-WHERE doc_id AND doc_type != "reference" AND !contains(file.path, "_templates") AND !contains(file.path, "00-dashboard") AND !contains(file.path, "_archive")
+WHERE doc_id AND doc_type != "reference" AND doc_type != "record" AND !contains(file.path, "_templates") AND !contains(file.path, "00-dashboard") AND !contains(file.path, "_archive")
 SORT doc_id ASC
 ```
 
@@ -34,7 +34,7 @@ SORT doc_id ASC
 ```dataview
 TABLE length(rows) AS "Count"
 FROM ""
-WHERE doc_id AND !contains(file.path, "_templates") AND !contains(file.path, "00-dashboard") AND !contains(file.path, "_archive")
+WHERE doc_id AND doc_type != "record" AND !contains(file.path, "_templates") AND !contains(file.path, "00-dashboard") AND !contains(file.path, "_archive")
 GROUP BY doc_type AS "Document Type"
 SORT doc_type ASC
 ```

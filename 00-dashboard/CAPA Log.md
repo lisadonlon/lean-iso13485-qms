@@ -22,11 +22,11 @@ TABLE
   capa_type AS "Type",
   capa_source AS "Source",
   capa_priority AS "Priority",
-  effective_date AS "Date Raised",
+  record_date AS "Date Raised",
   target_date AS "Target Date"
 FROM "05-records/capa"
 WHERE capa_status = "open" OR status = "draft" OR status = "review"
-SORT capa_priority DESC, effective_date ASC
+SORT capa_priority DESC, record_date ASC
 ```
 
 ## In Verification
@@ -49,7 +49,7 @@ TABLE
   title AS "Description",
   capa_type AS "Type",
   closure_date AS "Closed",
-  effective_date AS "Raised"
+  record_date AS "Raised"
 FROM "05-records/capa"
 WHERE capa_status = "closed" OR status = "approved"
 SORT closure_date DESC

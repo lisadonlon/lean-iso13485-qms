@@ -22,10 +22,10 @@ A lightweight ISO 13485:2016 Quality Management System, authored in Obsidian, wh
 
 1. **Never fabricate regulatory content.** Clause numbers, standard wording, guidance citations — do not invent or paraphrase. Standard text is copyright and is not stored here. If unsure, leave a `[verify: ...]` placeholder for a human to check against the source standard.
 
-2. **Never edit a document with `status: approved`** without explicit, scoped human instruction. Approved documents change only via a Rev N+1 ceremony (see `HOWTO.md` §4). If asked to change an approved doc, confirm a revision bump is intended.
+2. **Never edit a document with `status: approved`** without explicit, scoped human instruction. Approved documents change only via a Rev N+1 ceremony (see `HOWTO.md` §4). If asked to change an approved doc, confirm a revision bump is intended. Records are never revised at all: do not change an entry in a completed record. Corrections go in the record's Corrections section as dated, attributed entries.
 
 3. **Never write into these folders:**
-   - `05-records/software-validation/` — written only by `scripts/validate_qms.py`
+   - `VAL-YYYY-NN` files in `05-records/software-validation/` — written only by `scripts/validate_qms.py` (`SVR-YYYY-NN` records in the same folder are made by hand from the template)
    - `05-records/distribution/` — written only by `scripts/export_for_audit.py`
    - `_archive/` — only the supersession workflow writes here
    - `.git/` — never touch directly; always go via git commands
@@ -42,6 +42,8 @@ A lightweight ISO 13485:2016 Quality Management System, authored in Obsidian, wh
 7. **No emojis in QMS content, scripts, or tooling.**
 
 8. **Use one consistent spelling convention** (e.g. UK or US English) across the QMS and keep to it.
+
+9. **Use role names and terms exactly as defined in `REF-02 Glossary`.** If a document needs a role or term that is not there, propose adding it to REF-02 rather than inventing a synonym or defining it inside the document.
 
 ---
 
@@ -77,12 +79,18 @@ A lightweight ISO 13485:2016 Quality Management System, authored in Obsidian, wh
 | VAL-YYYY-NN | `05-records/software-validation/` | Validation records (script-written) |
 | DIST-YYYY-NN | `05-records/distribution/` | Distribution records (script-written) |
 | CAPA-YYYY-NN | `05-records/capa/` | CAPA records |
+| AUD-YYYY-NN | `05-records/audits/` | Audit records |
+| SVR-YYYY-NN | `05-records/software-validation/` | Software validation records (from template, per SOP-17) |
 
 NN is a zero-padded two-digit counter. The validator enforces NN, not NNN.
 
 ---
 
-## Frontmatter schema (18 fields, all required)
+## Documents and records are different
+
+A **controlled document** (manual, policy, procedure, work instruction, form, process map, reference) says what is done. It is approved, takes effect on a date, is reviewed on a cycle and is revised under SOP-01. A **record** is evidence that something was done. It is made once and kept; it is never revised, reviewed or superseded. The two therefore use different frontmatter, and the validator checks each.
+
+## Frontmatter schema: controlled documents (18 fields, all required)
 
 Every controlled document needs this frontmatter. The `_templates/` files generate it correctly — prefer the template over writing from memory.
 
@@ -90,7 +98,7 @@ Every controlled document needs this frontmatter. The `_templates/` files genera
 ---
 doc_id: SOP-01
 title: Document Control
-doc_type: procedure              # procedure|work-instruction|form|record|policy|manual|isms|reference|process-map
+doc_type: procedure              # procedure|work-instruction|form|policy|manual|isms|reference|process-map
 standard: ISO 13485:2016         # ISO 13485:2016|ISO 27001:2022|both
 clauses: ["4.2.4"]               # array — inline preferred
 revision: "1.0"
@@ -114,13 +122,41 @@ Conventions:
 - `revision` is a string (`"1.0"` not `1.0`) — YAML reads bare `1.0` as a float.
 - `clauses` and `related` must be arrays; inline form is canonical.
 
+## Frontmatter schema: records
+
+Every record in `05-records/` carries these fields:
+
+```yaml
+---
+doc_id: CAPA-2026-01
+title: Late supplier re-evaluation
+doc_type: record
+standard: ISO 13485:2016
+clauses: ["8.5.2"]
+record_date: 2026-01-15         # YYYY-MM-DD; the date the record was made
+author:
+tags: [qms, record, capa]
+related: []
+---
+```
+
+Records that are signed off (CAPA, audit, software validation, and any other record that needs an approval) also carry all three of:
+
+```yaml
+status: draft                    # draft|review|approved
+approver:
+approved_date:                   # YYYY-MM-DD; blank until approved
+```
+
+Records never carry `revision`, `effective_date`, `review_due`, `review_interval`, `supersedes` or `change_summary`. Record-specific fields (`capa_status`, `audit_date`, `validation_approach`, ...) follow the schema fields. Script-written records (VAL, DIST) carry the base fields only.
+
 ---
 
 ## Tooling — use these, don't reinvent
 
 | Command | Purpose |
 |---|---|
-| `make validate` | Run the 24-check validation, write a VAL record |
+| `make validate` | Run the 26-check validation, write a VAL record |
 | `make validate-dry` | Same without writing the record |
 | `make export` | Generate controlled-copy PDFs + a DIST record |
 | `make export-test` | Same without the DIST record |
@@ -133,7 +169,7 @@ Conventions:
 
 Python tooling in `scripts/` is stdlib-only by design (`export_for_audit.py` shells out to pandoc/weasyprint rather than importing them). Maintain that discipline. Organisation/quality-manager names come from `qms.config.json` via `qms_config.py` — don't hard-code them.
 
-The 24 checks are split IQ (installation: folders, git, plugins, templates), OQ (operational: template/dashboard configuration), PQ (performance: live content matches schema, working tree clean, approved docs tagged). When adding a check, classify it as IQ/OQ/PQ, follow the `iq_NN_*`/`oq_NN_*`/`pq_NN_*` naming, place it in numeric order within its phase, and update the count in the docstring and `main()`.
+The 26 checks are split IQ (installation: folders, git, plugins, templates), OQ (operational: template/dashboard configuration, including record templates), PQ (performance: live documents and records match their schemas, working tree clean, approved docs tagged). Each check is a preset acceptance criterion; see SOP-17 for how the VAL record fits a risk-based validation approach. When adding a check, classify it as IQ/OQ/PQ, follow the `iq_NN_*`/`oq_NN_*`/`pq_NN_*` naming, place it in numeric order within its phase, and update the count in the docstring and `main()`.
 
 ---
 

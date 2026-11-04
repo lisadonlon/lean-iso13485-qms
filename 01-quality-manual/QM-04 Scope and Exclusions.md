@@ -25,7 +25,12 @@ related: ["QM-01"]
 **Revision:** 1.0
 **Effective Date:** [DD/MM/YYYY]
 
-> **Skeleton — read before completing.** ISO 13485:2016 §1.2 allows you to exclude requirements of Clause 7 (and only Clause 7) when the activity is not performed and you justify the exclusion. Requirements in clauses 6, 7.6 and others may be recorded as "not applicable" with justification if they genuinely do not apply to your devices. **Do not exclude a clause just because it is inconvenient.** If you design devices, 7.3 applies. If your device is software, IEC 62304 applies. The default below assumes a typical device manufacturer — edit the Applicable/Justification column to match what you actually do.
+> **Skeleton — read before completing.** ISO 13485:2016 §1.2 separates two things, and both need a recorded justification:
+>
+> - **Exclusion.** Design and development controls (7.3) can be excluded, but only where the regulations that apply to your devices permit it. Whether they do depends on your market and device class, so check before relying on it.
+> - **Not applicable.** A requirement in Clause 6, 7 or 8 that does not apply because of the activities you perform or the nature of your devices is recorded as not applicable.
+>
+> Justifications must match what you actually do; your certification body will check them. This is a summary for navigation, not the standard's wording. **Do not mark a clause not applicable just because it is inconvenient.** If you design devices, 7.3 applies. If your device is or contains software, expect IEC 62304 to be part of your regulatory context. The default below assumes a typical device manufacturer — edit the Applicable/Justification column to match what you actually do.
 
 ## 1. Scope Statement
 
@@ -33,7 +38,7 @@ The QMS of {{ORGANISATION_NAME}} applies to: [state the devices, the activities 
 
 ## 2. Applicability of ISO 13485:2016 Requirements
 
-| Clause | Title | Applicable? | Justification (required if N/A) |
+| Clause | Title | Applicable? | Justification (required if excluded or N/A) |
 |--------|-------|-------------|----------------------------------|
 | 4 | Quality management system | Yes | |
 | 5 | Management responsibility | Yes | |
@@ -42,9 +47,13 @@ The QMS of {{ORGANISATION_NAME}} applies to: [state the devices, the activities 
 | 6.4 | Work environment and contamination control | [Yes/N/A] | [Justify N/A — e.g. no special environmental conditions required] |
 | 7.1 | Planning of product realization (incl. risk management) | Yes | |
 | 7.2 | Customer-related processes | Yes | |
-| 7.3 | Design and development | [Yes/N/A] | [N/A only if you do NOT design devices] |
+| 7.3 | Design and development | [Yes/Excluded] | [Exclusion only if you do not design devices AND your applicable regulations permit it — name the regulation] |
 | 7.4 | Purchasing | Yes | |
-| 7.5.1–7.5.5 | Production and service provision | Yes | |
+| 7.5.1 | Control of production and service provision | Yes | |
+| 7.5.2 | Cleanliness of product | [Yes/N/A] | |
+| 7.5.3 | Installation activities | [Yes/N/A] | [N/A if no device requires installation] |
+| 7.5.4 | Servicing activities | [Yes/N/A] | [N/A if servicing is not a specified requirement] |
+| 7.5.5 | Particular requirements for sterile medical devices | [Yes/N/A] | [N/A if no sterile devices] |
 | 7.5.6 | Validation of processes | [Yes/N/A] | |
 | 7.5.7 | Validation of sterilisation | [Yes/N/A] | [N/A if no sterile devices] |
 | 7.5.8–7.5.9 | Identification and traceability | Yes | |

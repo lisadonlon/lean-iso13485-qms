@@ -4,18 +4,9 @@ title: <% tp.system.prompt("Record title") %>
 doc_type: record
 standard: <% tp.system.suggester(["ISO 13485:2016", "ISO 27001:2022", "both"], ["ISO 13485:2016", "ISO 27001:2022", "both"]) %>
 clauses: [<% tp.system.prompt("Clause references") %>]
-revision: "1.0"
-status: draft
-effective_date: <% tp.date.now("YYYY-MM-DD") %>
-review_due:
-review_interval: 12
+record_date: <% tp.date.now("YYYY-MM-DD") %>
 author: 
-reviewer:
-approver: 
-approved_date:
-change_summary: "Record created"
 tags: [qms, record]
-supersedes:
 related: []
 ---
 
@@ -37,3 +28,11 @@ related: []
 
 **Completed by:** _________________________ **Date:** ___/___/______
 **Reviewed by:** _________________________ **Date:** ___/___/______
+
+## Corrections
+
+> Records are made once and are not revised. If an entry above is wrong, leave it as it is and add a dated, attributed correction here.
+
+| Date | By | Correction |
+|------|----|-----------|
+| | | |

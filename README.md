@@ -21,18 +21,26 @@ Most QMS tooling is heavyweight, proprietary, and hides your own documents behin
 |------|----------|
 | `00-dashboard/` | Dataview dashboards (register, overdue reviews, status, CAPA, audits) |
 | `01-quality-manual/` | QM-01–04 skeletons (manual, policy, objectives, scope & exclusions) |
-| `02-procedures/` | 16 SOP skeletons covering the ISO 13485 manufacturer scope |
+| `02-procedures/` | 17 SOP skeletons for the core of a manufacturer QMS — a starting set, not a complete one; check REF-01 against your scope |
 | `03-work-instructions/` | (empty — add your device-specific WIs) |
 | `04-forms-templates/` | FRM-01 controlled-document distribution log |
-| `05-records/` | Record folders (audits, CAPA, reviews, training, complaints, changes, validation, distribution) |
+| `05-records/` | Record folders (audits, CAPA, reviews, training, complaints, changes, validation, distribution); records use their own, shorter frontmatter |
 | `06-isms/` | (optional — add ISO 27001 docs here if in scope) |
 | `07-process-maps/` | (add Excalidraw process maps here) |
-| `08-references/` | REF-01 ISO 13485 clause-to-document map |
+| `08-references/` | REF-01 ISO 13485 clause-to-document map; REF-02 glossary of roles, company terms and regulatory terms |
 | `_templates/` | Templater templates for every document type |
-| `scripts/` | `validate_qms.py` (24-check IQ/OQ/PQ validator), `export_for_audit.py` (controlled-copy PDFs), `init_qms.py` (personalise), `qms_config.py` (config loader) |
+| `scripts/` | `validate_qms.py` (26-check IQ/OQ/PQ validator), `export_for_audit.py` (controlled-copy PDFs), `init_qms.py` (personalise), `qms_config.py` (config loader) |
 | `qms.config.json` | Your organisation name, quality manager, standard — the one place to configure |
 
 The SOP set is **manufacturer-aware**: it includes design & development (7.3), risk management (7.1 / ISO 14971), production (7.5) and vigilance (8.2.3) — the clauses a device manufacturer needs and that a service-provider QMS would exclude. Mark anything you don't do as N/A in `QM-04` with a justification.
+
+### Documents and records
+
+The template treats these differently. A controlled document (manual, procedure, work instruction, form) says what is done: it is approved, takes effect on a date, is reviewed and is revised under SOP-01. A record is evidence that something was done: it is made once and kept, never revised, so it has no revision, effective date or review date. Records that need sign-off (CAPA, audit, software validation) carry an approver and an approval date. The validator checks both schemas; see [`AGENTS.md`](AGENTS.md).
+
+### Software validation
+
+`make validate` checks this vault against preset criteria and writes a VAL record of the result. That record covers those checks only; it does not validate your software in general. `SOP-17 Software Validation` sets out a simple, risk-based approach with three validation approaches — use as-is, happy path, and a plan and report with acceptance criteria set in advance — for each tool you rely on.
 
 ## Quick start
 
@@ -45,9 +53,9 @@ The SOP set is **manufacturer-aware**: it includes design & development (7.3), r
    This sets `qms.config.json` and fills your organisation name into the document skeletons.
 4. Check the machinery works:
    ```bash
-   make validate-dry        # 24 checks; IQ-04 will fail until plugins are installed — expected
+   make validate-dry        # 26 checks; IQ-04 will fail until plugins are installed — expected
    ```
-5. Start filling in the skeletons, beginning with `QM-04 Scope and Exclusions` (decide what applies to you) and `SOP-01 Document Control`.
+5. Start filling in the skeletons, beginning with `REF-02 Glossary`: settle your role names and terms first, because every other document uses them. Then `QM-04 Scope and Exclusions` (decide what applies to you) and `SOP-01 Document Control`.
 6. Approve documents using the workflow in [`HOWTO.md`](HOWTO.md).
 
 See [`HOWTO.md`](HOWTO.md) for the day-to-day operations and [`AGENTS.md`](AGENTS.md) for the conventions (also used by AI coding agents). [`CLAUDE.md`](CLAUDE.md) is a symlink to `AGENTS.md`.
