@@ -24,7 +24,7 @@ related: ["QM-01", "QM-04"]
 **Document ID:** REF-01
 **Revision:** 1.0
 
-This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it to demonstrate coverage to an auditor and to find the controlling document quickly. Update it as you add or rename documents. Where a clause is recorded as not applicable, the justification lives in [[QM-04 Scope and Exclusions]]. The mapping is a suggestion: change it to show where you actually address each clause. Rows marked [Add document] have no skeleton in this template. Clause titles are shortened for navigation; check them against the official text.
+This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it to demonstrate coverage to an auditor and to find the controlling document quickly. Update it as you add or rename documents. Where a clause is recorded as not applicable, the justification lives in [[QM-04 Scope and Exclusions]]. The mapping is a suggestion: change it to show where you actually address each clause. Clause titles are shortened for navigation; check them against the official text.
 
 | Clause | Title | Controlling document(s) |
 |--------|-------|--------------------------|
@@ -32,7 +32,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 4.1.2 | Risk-based approach to QMS processes | [[SOP-06 Risk Management]] |
 | 4.1.6 | Validation of software used in the QMS | [[SOP-17 Software Validation]] |
 | 4.2.1–4.2.2 | Documentation / Quality manual | [[QM-01 Quality Manual]], [[QM-04 Scope and Exclusions]] |
-| 4.2.3 | Medical device file | [Add document] |
+| 4.2.3 | Medical device file | [[SOP-19 Medical Device File]] |
 | 4.2.4 | Control of documents | [[SOP-01 Document Control]] |
 | 4.2.5 | Control of records | [[SOP-02 Control of Records]] |
 | 5.1–5.4 | Management commitment / policy / objectives | [[QM-02 Quality Policy]], [[QM-03 Quality Objectives]] |
@@ -42,7 +42,7 @@ This map shows where each ISO 13485:2016 clause is addressed in the QMS. Use it 
 | 6.2 | Human resources / competence | [[SOP-04 Human Resources and Competence]] |
 | 6.3–6.4 | Infrastructure / work environment | [[SOP-05 Infrastructure and Work Environment]] |
 | 7.1 | Planning of realization / risk management | [[SOP-06 Risk Management]] |
-| 7.2 | Customer-related processes | [Add document] |
+| 7.2 | Customer-related processes | [[SOP-20 Customer-Related Processes]] |
 | 7.3 | Design and development | [[SOP-07 Design and Development Control]] |
 | 7.4 | Purchasing | [[SOP-08 Purchasing and Supplier Control]], [[SOP-06 Risk Management]] |
 | 7.5.1–7.5.5 | Production and service provision | [[SOP-09 Production and Service Provision]] |

@@ -16,7 +16,7 @@ approved_date:
 change_summary: "Initial draft"
 tags: [qms, procedure]
 supersedes:
-related: ["SOP-06"]
+related: ["SOP-06", "SOP-19"]
 ---
 
 # Complaint Handling and Feedback
@@ -26,6 +26,8 @@ related: ["SOP-06"]
 **Effective Date:** [DD/MM/YYYY]
 
 > **Risk link.** Complaints and feedback feed into the risk management file ([[SOP-06 Risk Management]]).
+>
+> **Post-market surveillance.** Under the EU MDR they also feed each device's post-market surveillance plan and reports, kept with its technical documentation ([[SOP-19 Medical Device File]]); the report type depends on device class (EU MDR Articles 83–86).
 
 ## 1. Purpose
 
